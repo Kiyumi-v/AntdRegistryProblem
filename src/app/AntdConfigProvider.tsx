@@ -1,15 +1,15 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
+import {FC, ReactNode} from 'react';
 import {
   StyleProvider,
   legacyLogicalPropertiesTransformer,
 } from '@ant-design/cssinjs';
-import { ConfigProvider } from 'antd';
+import {ConfigProvider} from 'antd';
 
 export const AntdConfigProvider: FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+                                                                  children,
+                                                                }) => {
   return (
     <StyleProvider layer transformers={[legacyLogicalPropertiesTransformer]}>
       <ConfigProvider theme={{
@@ -32,7 +32,10 @@ export const AntdConfigProvider: FC<{ children: ReactNode }> = ({
             "algorithm": true
           }
         }
-      }}>{children}</ConfigProvider>
+      }}
+      >
+        {children}
+      </ConfigProvider>
     </StyleProvider>
   );
 };
